@@ -63,3 +63,4 @@ Fique atento(a) às redes sociais!
 
 ## 📁 Estrutura deste repositório
 - [Cronograma](cronograma/cronograma.md)
+- [Edital](edital/edital.md)
