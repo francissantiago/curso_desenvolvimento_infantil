@@ -62,4 +62,4 @@ As inscrições estarão **abertas a partir de 10 de maio**.
 Fique atento(a) às redes sociais!
 
 ## 📁 Estrutura deste repositório
-- (Cronograma)[cronograma/cronograma.md]
+- [Cronograma](cronograma/cronograma.md)
