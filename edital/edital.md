@@ -2,6 +2,7 @@
 ### Curso de Programação Web para Crianças (Online)  
 **Organização:** Francis Santiago  
 **Período de inscrição:** 10 de Maio de 2025 a 07 de Junho de 2025  
+**Comunicação dos selecionados:** 14 de Junho de 2025  
 **Início das aulas:** 21 de Julho de 2025  
 
 ---
