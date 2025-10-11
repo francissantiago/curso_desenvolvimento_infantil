@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Aula 4: Cores, Fontes e Estilos com CSS</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>🎨 Aula 4: Cores, Fontes e Estilos com CSS</h1>
+                <p>Olá, Pequeno Programador! Hoje vamos aprender a deixar sua página muito mais bonita! <span class="emoji">👋</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="O que é CSS?" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Usando CSS" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="Fontes e Estilos" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Atividade Lúdica" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Curiosidade" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2 style="text-align: center; margin-bottom: 30px;"><span class="emoji">🎨</span> Olá, Pequeno Programador!</h2>
+                    <div style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                        <p>Hoje vamos aprender a deixar sua página muito mais bonita usando uma mágica chamada <strong>CSS</strong>! Você vai poder mudar as cores, as letras e deixar tudo do seu jeito.</p>
+                        <div style="font-size: 3rem; margin: 30px 0;">🌈✨🎨</div>
+                        <p>Use os pontinhos do lado direito para navegar!</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️ Anterior</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é CSS -->
+                <div class="section slide" id="slide-1">
+                    <h2><span class="emoji">🧙‍♂️</span> O que é CSS?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">CSS é como as roupas e a decoração do seu site.</p>
+                    <ul>
+                        <li><strong>Termo:</strong> CSS significa "Cascading Style Sheets" (Folhas de Estilo em Cascata).</li>
+                        <li>Com CSS, você pode mudar as cores, o tamanho das letras, o fundo e muito mais!</li>
+                    </ul>
+
+                    <div class="css-demo">
+                        <div class="before-css">
+                            <h3>Sem CSS</h3>
+                            <p>Página básica e sem graça</p>
+                        </div>
+                        <div class="after-css">
+                            <h3>Com CSS</h3>
+                            <p style="color: #ff6b6b; font-family: 'Comic Sans MS'; background: linear-gradient(45deg, #ffeaa7, #fab1a0);">Página linda e colorida!</p>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 1:</h3>
+                        <p>Olhe para sua página pessoal. Que cor você gostaria de usar no fundo? E nas letras?</p>
+                        <br>
+                        <div class="color-picker">
+                            <button class="color-btn" style="background: #ff7675;" onclick="selectColor('#ff7675')">Vermelho</button>
+                            <button class="color-btn" style="background: #74b9ff;" onclick="selectColor('#74b9ff')">Azul</button>
+                            <button class="color-btn" style="background: #00b894;" onclick="selectColor('#00b894')">Verde</button>
+                            <button class="color-btn" style="background: #fdcb6e;" onclick="selectColor('#fdcb6e')">Amarelo</button>
+                            <button class="color-btn" style="background: #e17055;" onclick="selectColor('#e17055')">Laranja</button>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Como usar o CSS -->
+                <div class="section slide" id="slide-2">
+                    <h2><span class="emoji">💻</span> Como usar o CSS no CodePen</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">No CodePen, existe um campo chamado <strong>CSS</strong>. Tudo que você escrever ali vai mudar o visual da sua página.</p>
+
+                    <div class="css-example">
+                        <h3>Exemplo de CSS:</h3>
+                        <div class="code-block">
+                            <pre><code>body {
+  background-color: lightblue;
+}
+h1 {
+  color: darkblue;
+  font-family: 'Comic Sans MS', cursive;
+}
+p {
+  color: green;
+}</code></pre>
+                        </div>
+                        <p style="margin-top: 15px;"><strong>Isso vai deixar:</strong> o fundo azul claro, o título azul escuro e o texto verde!</p>
+                    </div>
+
+                    <div class="css-properties">
+                        <div class="property-item">
+                            <code>background-color</code>
+                            <p>Muda a cor do fundo</p>
+                        </div>
+                        <div class="property-item">
+                            <code>color</code>
+                            <p>Muda a cor do texto</p>
+                        </div>
+                        <div class="property-item">
+                            <code>font-family</code>
+                            <p>Muda o tipo da letra</p>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 2:</h3>
+                        <p>Tente mudar as cores do fundo, do título e do texto da sua página. Use suas cores favoritas!</p>
+                        <button class="interactive-button" onclick="tryCSS()">🎨 Experimentar CSS</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Fontes e estilos -->
+                <div class="section slide" id="slide-3">
+                    <h2><span class="emoji">✏️</span> Explorando fontes e estilos</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Você pode mudar muito mais com CSS!</p>
+
+                    <div class="font-examples">
+                        <div class="font-sample" style="font-family: Arial;">Arial - Fonte normal</div>
+                        <div class="font-sample" style="font-family: 'Comic Sans MS';">Comic Sans - Divertida!</div>
+                        <div class="font-sample" style="font-weight: bold;">Texto em negrito</div>
+                        <div class="font-sample" style="font-style: italic;">Texto em itálico</div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>✏️ Desafio 3:</h3>
+                        <p>Experimente trocar a fonte do seu título e deixar o parágrafo em itálico.</p>
+                        <button class="interactive-button" onclick="changeFonts()">🔤 Mudar Fontes</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Atividade Lúdica -->
+                <div class="section slide" id="slide-4">
+                    <h2><span class="emoji">🎨</span> Atividade Lúdica: Página Colorida</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Deixe sua página pessoal super colorida!</p>
+                    <ul>
+                        <li>Tente combinar cores diferentes</li>
+                        <li>Use fontes divertidas</li>
+                        <li>Mostre para seus amigos!</li>
+                    </ul>
+
+                    <br>
+
+                    <div class="color-palette">
+                        <button class="palette-btn" onclick="applyPalette('rainbow')">🌈 Arco-íris</button>
+                        <button class="palette-btn" onclick="applyPalette('ocean')">🌊 Oceano</button>
+                        <button class="palette-btn" onclick="applyPalette('sunset')">🌅 Pôr do sol</button>
+                        <button class="palette-btn" onclick="applyPalette('forest')">🌲 Floresta</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Ferramentas -->
+                <div class="section slide" id="slide-5">
+                    <h2><span class="emoji">🛠️</span> Ferramentas Online para Explorar</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item" onclick="openTool('codepen')">
+                            <div style="font-size: 2rem;">📝</div>
+                            <h4>CodePen</h4>
+                            <p>Para testar CSS</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('fontawesome')">
+                            <div style="font-size: 2rem;">⭐</div>
+                            <h4>FontAwesome</h4>
+                            <p>Ícones legais</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('googlefonts')">
+                            <div style="font-size: 2rem;">🔤</div>
+                            <h4>Google Fonts</h4>
+                            <p>Fontes diferentes</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('coolors')">
+                            <div style="font-size: 2rem;">🎨</div>
+                            <h4>Coolors</h4>
+                            <p>Paletas de cores</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Curiosidade -->
+                <div class="section slide" id="slide-6">
+                    <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+                    <div class="fun-fact">
+                        <p style="font-size: 1.2rem; margin-bottom: 15px;">🌟 Você sabia que existem milhares de cores e fontes diferentes?</p>
+                        <p>Cada cor tem um código especial (como #ff0000 para vermelho) e você pode misturar todas elas!</p>
+                        <button class="interactive-button" onclick="showColorCodes()">🔢 Ver Códigos</button>
+                        <div id="colorCodes" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Próxima Aula -->
+                <div class="section slide" id="slide-7">
+                    <h2><span class="emoji">🎯</span> Para a próxima aula...</h2>
+                    <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Pense: Como organizar melhor as informações na sua página? Que tal aprender sobre caixas e posicionamento?</p>
+                    <div style="text-align: center;">
+                        <button class="interactive-button" onclick="window.location.href='aula5.html'">🚀 Ir para Aula 5</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" onclick="window.location.href='index.html'">🏠 Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

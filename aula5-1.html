@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚 Aula 5.1: Resumo e Reforço - Tudo que Aprendemos!</title>
+    <link rel="stylesheet" href="style.css?v=1.0" />
+    <script src="script.js?v=1.0" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Área da Aula -->
+      <div class="lesson-view" id="lessonView">
+        <div class="header">
+          <h1>📚 Aula 5.1: Resumo e Reforço - Tudo que Aprendemos!</h1>
+          <p>
+            Olá, Pequeno Programador! Vamos revisar tudo que aprendemos das
+            aulas 1 à 5 e praticar aplicando tudo! <span class="emoji">👋</span>
+          </p>
+          <button class="back-btn" onclick="window.location.href='index.html'">
+            ← Voltar ao Menu
+          </button>
+        </div>
+
+        <!-- Controles de Navegação -->
+        <div class="navigation-controls">
+          <div
+            class="nav-dot active"
+            data-title="Introdução"
+            onclick="goToSlide(0)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Revisão Internet"
+            onclick="goToSlide(1)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Revisão HTML"
+            onclick="goToSlide(2)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Revisão CSS"
+            onclick="goToSlide(3)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Revisão Layout"
+            onclick="goToSlide(4)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Exercício Prático"
+            onclick="goToSlide(5)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Aplicação Completa"
+            onclick="goToSlide(6)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Ferramentas"
+            onclick="goToSlide(7)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Curiosidade"
+            onclick="goToSlide(8)"
+          ></div>
+          <div
+            class="nav-dot"
+            data-title="Próxima Aula"
+            onclick="goToSlide(9)"
+          ></div>
+        </div>
+
+        <!-- Container dos Slides -->
+        <div class="slides-container">
+          <!-- Slide 0: Introdução -->
+          <div class="section slide active" id="slide-0">
+            <h2 style="text-align: center; margin-bottom: 30px">
+              <span class="emoji">📚</span> Bem-vindo ao Resumo!
+            </h2>
+            <div
+              style="text-align: center; font-size: 1.2rem; margin-bottom: 30px"
+            >
+              Vamos revisar tudo que aprendemos nas aulas 1 à 5 e praticar
+              aplicando tudo em um projeto completo!
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" disabled>⬅️ Anterior</button>
+              <div class="slide-counter">1 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 1: Revisão Internet e Sites -->
+          <div class="section slide" id="slide-1">
+            <h2><span class="emoji">🌐</span> Revisão: Internet e Sites</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Lembra da Aula 1? A internet conecta computadores e sites são
+              casas na web feitas de HTML, CSS e JavaScript!
+            </p>
+            <ul>
+              <li>🌍 Internet: Rede de computadores conectados</li>
+              <li>🏠 Site: Página com informações, jogos e links</li>
+              <li>
+                🧙‍♂️ 3 Partes Mágicas: HTML (estrutura), CSS (estilo), JS
+                (interatividade)
+              </li>
+            </ul>
+            <div class="challenge-box">
+              <h3>🤔 Pense:</h3>
+              <p>Qual site você mais gosta de visitar e por quê?</p>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">2 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 2: Revisão HTML -->
+          <div class="section slide" id="slide-2">
+            <h2><span class="emoji">👩‍💻</span> Revisão: HTML Básico</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Da Aula 2: HTML é a estrutura da página, como ossos de um corpo!
+            </p>
+            <ul>
+              <li>
+                &lt;html&gt;, &lt;head&gt;, &lt;body&gt; - Estrutura básica
+              </li>
+              <li>&lt;h1&gt; a &lt;h6&gt; - Títulos</li>
+              <li>&lt;p&gt; - Parágrafos</li>
+              <li>&lt;img&gt; - Imagens</li>
+              <li>&lt;a&gt; - Links</li>
+            </ul>
+            <div class="code-block html-block">
+              <pre>
+&lt;h1&gt;Meu Título&lt;/h1&gt;
+&lt;p&gt;Meu parágrafo.&lt;/p&gt;
+&lt;img src="imagem.jpg" alt="Descrição"&gt;</pre
+              >
+            </div>
+            <div class="challenge-box">
+              <h3>🎨 Exercício:</h3>
+              <p>
+                Escreva uma tag HTML para um título e um parágrafo sobre você!
+              </p>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">3 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 3: Revisão CSS -->
+          <div class="section slide" id="slide-3">
+            <h2><span class="emoji">🎨</span> Revisão: CSS para Estilo</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Da Aula 4: CSS deixa tudo bonito, como roupas coloridas!
+            </p>
+            <ul>
+              <li>color: Muda cor do texto</li>
+              <li>background-color: Fundo colorido</li>
+              <li>font-family: Tipo da letra</li>
+              <li>font-size: Tamanho da fonte</li>
+            </ul>
+            <div class="code-block css-block">
+              <pre>
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: darkblue;
+  font-family: 'Comic Sans MS';
+}</pre
+              >
+            </div>
+            <div class="challenge-box">
+              <h3>🎨 Exercício:</h3>
+              <p>
+                Escreva CSS para deixar um título vermelho e o fundo amarelo!
+              </p>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">4 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 4: Revisão Layout -->
+          <div class="section slide" id="slide-4">
+            <h2><span class="emoji">📦</span> Revisão: Layout e Caixas</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Da Aula 5: Use &lt;div&gt; para organizar como caixas!
+            </p>
+            <ul>
+              <li>&lt;div&gt; - Container para agrupar elementos</li>
+              <li>width, height: Tamanho da caixa</li>
+              <li>border: Borda da caixa</li>
+              <li>padding, margin: Espaçamento</li>
+            </ul>
+            <div class="code-block css-block">
+              <pre>
+.minha-caixa {
+  width: 200px;
+  height: 100px;
+  background-color: pink;
+  border: 2px solid red;
+  padding: 10px;
+}</pre
+              >
+            </div>
+            <div class="challenge-box">
+              <h3>📦 Exercício:</h3>
+              <p>Crie uma caixa azul com borda preta usando CSS!</p>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">5 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 5: Exercício Prático -->
+          <div class="section slide" id="slide-5">
+            <h2>
+              <span class="emoji">🎮</span> Exercício Prático: Construa uma
+              Página!
+            </h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Agora vamos aplicar tudo! Crie uma página pessoal simples.
+            </p>
+            <div class="practical-exercise">
+              <h3>Passo 1: Estrutura HTML</h3>
+              <p>Adicione título, parágrafo e imagem.</p>
+              <button class="interactive-button" onclick="addHTMLElements()">
+                ➕ Adicionar Elementos HTML
+              </button>
+              <div id="htmlElements" class="exercise-result"></div>
+
+              <h3>Passo 2: Estilo CSS</h3>
+              <p>Mude cores e fontes.</p>
+              <button class="interactive-button" onclick="applyCSSStyles()">
+                🎨 Aplicar Estilos CSS
+              </button>
+              <div id="cssStyles" class="exercise-result"></div>
+
+              <h3>Passo 3: Layout com Caixas</h3>
+              <p>Organize em caixas.</p>
+              <button class="interactive-button" onclick="createLayoutBoxes()">
+                📦 Criar Layout
+              </button>
+              <div id="layoutBoxes" class="exercise-result"></div>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">6 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 6: Aplicação Completa -->
+          <div class="section slide" id="slide-6">
+            <h2>
+              <span class="emoji">🚀</span> Aplicação Completa: Sua Página
+              Final!
+            </h2>
+            <p style="font-size: 1.1rem; margin-bottom: 20px">
+              Veja como tudo se junta em uma página completa!
+            </p>
+            <div class="complete-page-preview" id="completePagePreview">
+              <div class="preview-header">Cabeçalho da Página</div>
+              <div class="preview-content">
+                <h1>Meu Nome</h1>
+                <p>Olá, eu sou um pequeno programador!</p>
+                <img
+                  src="https://placedog.net/100/100"
+                  alt="Cachorro fofo"
+                  style="border-radius: 50%"
+                />
+              </div>
+              <div class="preview-footer">Rodapé da Página</div>
+            </div>
+            <button class="interactive-button" onclick="generateCompletePage()">
+              🔧 Gerar Página Completa
+            </button>
+            <div id="generatedCode" class="code-result"></div>
+            <div class="challenge-box">
+              <h3>🎯 Desafio Final:</h3>
+              <p>Modifique a página com suas próprias informações e estilos!</p>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">7 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 7: Ferramentas -->
+          <div class="section slide" id="slide-7">
+            <h2><span class="emoji">🛠️</span> Ferramentas para Praticar</h2>
+            <div class="tools-grid">
+              <div class="tool-item" onclick="openTool('codepen')">
+                <img src="https://codepen.io/favicon.ico" alt="CodePen" />
+                <h4>CodePen</h4>
+                <p>Editor online para HTML, CSS e JS</p>
+              </div>
+              <div class="tool-item" onclick="openTool('unsplash')">
+                <img src="https://unsplash.com/favicon.ico" alt="Unsplash" />
+                <h4>Unsplash</h4>
+                <p>Imagens gratuitas para seus sites</p>
+              </div>
+              <div class="tool-item" onclick="openTool('fontawesome')">
+                <img
+                  src="https://fontawesome.com/favicon.ico"
+                  alt="Font Awesome"
+                />
+                <h4>Font Awesome</h4>
+                <p>Ícones legais para decorar</p>
+              </div>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">8 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 8: Curiosidade -->
+          <div class="section slide" id="slide-8">
+            <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+            <div class="fun-fact">
+              <p style="font-size: 1.2rem; margin-bottom: 15px">
+                🌟 Você sabia que o primeiro site da internet ainda existe? Foi
+                criado em 1991 pelo cientista Tim Berners-Lee!
+              </p>
+              <p>
+                Ele tinha apenas texto simples, mas mudou o mundo para sempre!
+              </p>
+              <button class="interactive-button" onclick="showFirstWebsite()">
+                🔍 Ver Primeiro Site
+              </button>
+              <div id="firstWebsiteInfo" style="margin-top: 15px"></div>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">9 / 10</div>
+              <button class="nav-button" onclick="nextSlide()">
+                Próximo ➡️
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide 9: Próxima Aula -->
+          <div class="section slide" id="slide-9">
+            <h2><span class="emoji">🎯</span> Próxima Aula: JavaScript!</h2>
+            <p
+              style="font-size: 1.2rem; text-align: center; margin-bottom: 20px"
+            >
+              Agora que você sabe HTML, CSS e Layout, vamos aprender JavaScript
+              para fazer páginas interativas!
+            </p>
+            <div style="text-align: center">
+              <button
+                class="interactive-button"
+                onclick="window.location.href='aula6.html'"
+              >
+                🚀 Ir para Aula 6
+              </button>
+            </div>
+            <div class="slide-navigation">
+              <button class="nav-button" onclick="prevSlide()">
+                ⬅️ Anterior
+              </button>
+              <div class="slide-counter">10 / 10</div>
+              <button class="nav-button" disabled>Próximo ➡️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

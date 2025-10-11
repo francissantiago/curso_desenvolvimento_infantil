@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👩‍💻 Aula 2: Primeiros Passos com HTML</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>👩‍💻 Aula 2: Primeiros Passos com HTML</h1>
+                <p>Olá, Pequeno Programador! Hoje vamos começar a construir páginas de verdade usando HTML! <span class="emoji">👋</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="O que é HTML?" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Tags HTML" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="Primeira Página" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Atividade Lúdica" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Curiosidade" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2 style="text-align: center; margin-bottom: 30px;"><span class="emoji">👩‍💻</span> Olá, Pequeno Programador!</h2>
+                    <div style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                        <p>Hoje vamos começar a construir páginas de verdade usando uma linguagem chamada <strong>HTML</strong>! Pronto para criar sua primeira página?</p>
+                        <div style="font-size: 3rem; margin: 30px 0;">🏗️✨💻</div>
+                        <p>Use os pontinhos do lado direito para navegar!</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️ Anterior</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é HTML -->
+                <div class="section slide" id="slide-1">
+                    <h2><span class="emoji">🏗️</span> O que é HTML?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">HTML é como o esqueleto de um site, dando forma e estrutura para tudo aparecer direitinho.</p>
+                    <ul>
+                        <li><strong>Termo:</strong> HTML significa "HyperText Markup Language" (Linguagem de Marcação de Hipertexto).</li>
+                        <li>Com HTML, você pode colocar textos, imagens, títulos e links na sua página.</li>
+                    </ul>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 1:</h3>
+                        <p>Imagine que você é um arquiteto de sites. O que você gostaria de colocar na sua primeira página? Faça um desenho rápido!</p>
+                        <div class="drawing-area" onclick="drawHTML()" id="drawingArea1">
+                            <p>✏️ Clique aqui para "desenhar" sua primeira página!</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Conhecendo as principais tags -->
+                <div class="section slide" id="slide-2">
+                    <h2><span class="emoji">🏷️</span> Conhecendo as principais tags</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>Tag</strong> é como uma etiqueta que diz ao computador o que mostrar na página.</p>
+
+                    <div class="tags-grid">
+                        <div class="tag-item" onclick="explainTag('html')">
+                            <code>&lt;html&gt;</code>
+                            <p>Diz que tudo ali é um site</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('head')">
+                            <code>&lt;head&gt;</code>
+                            <p>Guarda informações importantes</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('body')">
+                            <code>&lt;body&gt;</code>
+                            <p>Onde aparece tudo que você vê</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('h1')">
+                            <code>&lt;h1&gt;</code>
+                            <p>Título grandão</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('p')">
+                            <code>&lt;p&gt;</code>
+                            <p>Parágrafo, para textos</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('img')">
+                            <code>&lt;img&gt;</code>
+                            <p>Para mostrar imagens</p>
+                        </div>
+                        <div class="tag-item" onclick="explainTag('a')">
+                            <code>&lt;a&gt;</code>
+                            <p>Para criar links</p>
+                        </div>
+                    </div>
+
+                    <div id="tagExplanation" class="tag-explanation">
+                        <p>Clique em uma tag para ver mais detalhes!</p>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>📝 Desafio 2:</h3>
+                        <p>Escreva em um papel ou no computador o nome de cada tag e desenhe ao lado o que ela faz!</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Mão na massa -->
+                <div class="section slide" id="slide-3">
+                    <h2><span class="emoji">🛠️</span> Mão na massa: Criando sua primeira página</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Vamos usar o CodePen para praticar! Clique no botão abaixo para abrir o CodePen e seguir os passos.</p>
+
+                    <div class="codepen-demo">
+                        <h3>Passo a passo:</h3>
+                        <ol>
+                            <li>Acesse o site CodePen.io</li>
+                            <li>Clique em "Create" > "Pen"</li>
+                            <li>No campo HTML, digite o código abaixo:</li>
+                        </ol>
+
+                        <div class="code-block">
+                            <pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Eu estou aprendendo HTML!&lt;/p&gt;
+    &lt;img src="https://placedog.net/200/200" alt="Cachorrinho fofo"&gt;
+    &lt;a href="https://www.google.com"&gt;Visite o Google&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <button class="interactive-button" onclick="openCodePen()">🚀 Abrir CodePen</button>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 3:</h3>
+                        <p>Troque o texto do título, mude o parágrafo e coloque o link para o seu site favorito!</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Atividade Lúdica -->
+                <div class="section slide" id="slide-4">
+                    <h2><span class="emoji">🎨</span> Atividade Lúdica: Página dos Sonhos</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Crie uma página com:</p>
+                    <ul>
+                        <li>Um título com seu nome</li>
+                        <li>Um parágrafo contando o que você mais gosta de fazer</li>
+                        <li>Uma imagem de algo que você gosta</li>
+                        <li>Um link para um site divertido</li>
+                    </ul>
+                    <p>Depois, compartilhe com seus amigos ou família!</p>
+
+                    <div class="dream-page-builder">
+                        <button class="interactive-button" onclick="buildDreamPage()">🏗️ Construir Página dos Sonhos</button>
+                        <div id="dreamPageResult" class="dream-result"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Ferramentas Online -->
+                <div class="section slide" id="slide-5">
+                    <h2><span class="emoji">🛠️</span> Ferramentas Online para Explorar</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item" onclick="openTool('codepen')">
+                            <div style="font-size: 2rem;">📝</div>
+                            <h4>CodePen</h4>
+                            <p>Para praticar HTML</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('unsplash')">
+                            <div style="font-size: 2rem;">📸</div>
+                            <h4>Unsplash</h4>
+                            <p>Para encontrar imagens legais</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('fontawesome')">
+                            <div style="font-size: 2rem;">⭐</div>
+                            <h4>FontAwesome</h4>
+                            <p>Para adicionar ícones</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Curiosidade -->
+                <div class="section slide" id="slide-6">
+                    <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+                    <div class="fun-fact">
+                        <p style="font-size: 1.2rem; margin-bottom: 15px;">🌟 Você sabia que toda página da internet começa com HTML?</p>
+                        <p>Até os sites mais famosos como Google, YouTube e Facebook começaram com HTML simples!</p>
+                        <button class="interactive-button" onclick="showHTMLFact()">🔍 Ver Exemplo</button>
+                        <div id="htmlFactInfo" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Próxima Aula -->
+                <div class="section slide" id="slide-7">
+                    <h2><span class="emoji">🎯</span> Para a próxima aula...</h2>
+                    <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Pense: O que mais você gostaria de colocar na sua página? Que tal aprender a deixá-la colorida e estilosa?</p>
+                    <div style="text-align: center;">
+                        <button class="interactive-button" onclick="window.location.href='aula3.html'">🚀 Ir para Aula 3</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" onclick="window.location.href='index.html'">🏠 Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

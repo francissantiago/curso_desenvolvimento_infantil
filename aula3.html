@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👤 Aula 3: Criando sua Primeira Página Pessoal</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>👤 Aula 3: Criando sua Primeira Página Pessoal</h1>
+                <p>Olá, Pequeno Programador! Hoje você vai criar uma página só sua! <span class="emoji">👋</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="Página Pessoal" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Desenho no Papel" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="Criando no CodePen" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Dica de Imagem" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Curiosidade" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2 style="text-align: center; margin-bottom: 30px;"><span class="emoji">👤</span> Olá, Pequeno Programador!</h2>
+                    <div style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                        <p>Hoje você vai criar uma página só sua! Vamos colocar seu nome, idade, uma imagem que você gosta e até links para seus sites favoritos.</p>
+                        <div style="font-size: 3rem; margin: 30px 0;">🎨✨👨‍👩‍👧‍👦</div>
+                        <p>Use os pontinhos do lado direito para navegar!</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️ Anterior</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é uma página pessoal -->
+                <div class="section slide" id="slide-1">
+                    <h2><span class="emoji">🏠</span> O que é uma página pessoal?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">É um espaço só seu na internet, onde você pode se apresentar e mostrar o que gosta.</p>
+                    <ul>
+                        <li>Você pode colocar informações, fotos, links e muito mais!</li>
+                        <li><strong>Termo:</strong> "Página pessoal" é uma página feita para contar sobre você.</li>
+                    </ul>
+
+                    <div class="personal-page-demo">
+                        <div class="demo-profile">
+                            <div class="demo-avatar">👤</div>
+                            <h3>Minha Página Pessoal</h3>
+                            <p>Olá! Eu sou [Seu Nome]...</p>
+                            <div class="demo-links">
+                                <span>🔗 Links legais</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>📝 Desafio 1:</h3>
+                        <p>Pense: O que você gostaria de mostrar sobre você? Faça uma lista com 3 coisas legais sobre você!</p>
+                        <div class="list-input" id="personalList">
+                            <input type="text" placeholder="1. Coisa legal sobre mim..." onkeypress="addToList(event, this)">
+                            <input type="text" placeholder="2. Coisa legal sobre mim..." onkeypress="addToList(event, this)">
+                            <input type="text" placeholder="3. Coisa legal sobre mim..." onkeypress="addToList(event, this)">
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Montando sua página no papel -->
+                <div class="section slide" id="slide-2">
+                    <h2><span class="emoji">✏️</span> Montando sua página no papel</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Antes de ir para o computador, desenhe como você quer que sua página fique.</p>
+
+                    <div class="paper-sketch">
+                        <h3>Pense em:</h3>
+                        <ul>
+                            <li>Um título com seu nome</li>
+                            <li>Uma imagem que você gosta</li>
+                            <li>Um texto contando sobre você</li>
+                            <li>Um link para um site favorito</li>
+                        </ul>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 2:</h3>
+                        <p>Faça o desenho da sua página pessoal no papel. Use lápis de cor e solte a criatividade!</p>
+                        <div class="drawing-area" onclick="drawPersonalPage()" id="drawingArea2">
+                            <p>✏️ Clique aqui para "desenhar" sua página pessoal!</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Criando sua página no CodePen -->
+                <div class="section slide" id="slide-3">
+                    <h2><span class="emoji">💻</span> Criando sua página no CodePen</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Vamos transformar seu desenho em uma página de verdade!</p>
+
+                    <div class="codepen-demo">
+                        <h3>Passo a passo:</h3>
+                        <ol>
+                            <li>Acesse o CodePen</li>
+                            <li>Clique em "Create" > "Pen"</li>
+                            <li>No campo HTML, digite o código abaixo:</li>
+                        </ol>
+
+                        <div class="code-block">
+                            <pre><code>&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minha Página Pessoal&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Seu Nome Aqui&lt;/h1&gt;
+    &lt;img src="URL_da_sua_imagem" alt="Minha imagem favorita" width="200"&gt;
+    &lt;p&gt;Olá! Eu sou [Seu Nome], tenho [sua idade] anos e gosto de [seu hobby].&lt;/p&gt;
+    &lt;a href="https://www.seusitefavorito.com"&gt;Meu site favorito&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <button class="interactive-button" onclick="openCodePen()">🚀 Abrir CodePen</button>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 3:</h3>
+                        <p>Troque as informações pelo que você desenhou e escreveu. Mostre sua página para um amigo ou familiar!</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Dica de imagem -->
+                <div class="section slide" id="slide-4">
+                    <h2><span class="emoji">📸</span> Dica de imagem</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Você pode usar imagens do Unsplash ou PlaceDog para sua página!</p>
+
+                    <div class="image-sources">
+                        <div class="image-source" onclick="openImageSource('unsplash')">
+                            <div style="font-size: 3rem;">🌄</div>
+                            <h4>Unsplash</h4>
+                            <p>Fotos lindas e grátis</p>
+                        </div>
+                        <div class="image-source" onclick="openImageSource('placedog')">
+                            <div style="font-size: 3rem;">🐕</div>
+                            <h4>PlaceDog</h4>
+                            <p>Cachorrinhos fofos</p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <p><strong>Dica:</strong> Clique com o botão direito na imagem e escolha "Copiar endereço da imagem".</p>
+                        <p><strong>Termo:</strong> O atributo <code>src</code> na tag <code>&lt;img&gt;</code> é onde você coloca o endereço da imagem.</p>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Ferramentas Online -->
+                <div class="section slide" id="slide-5">
+                    <h2><span class="emoji">🛠️</span> Ferramentas Online para Explorar</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item" onclick="openTool('codepen')">
+                            <div style="font-size: 2rem;">📝</div>
+                            <h4>CodePen</h4>
+                            <p>Para criar páginas</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('unsplash')">
+                            <div style="font-size: 2rem;">📸</div>
+                            <h4>Unsplash</h4>
+                            <p>Imagens legais</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('placedog')">
+                            <div style="font-size: 2rem;">🐶</div>
+                            <h4>PlaceDog</h4>
+                            <p>Cachorrinhos</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('fontawesome')">
+                            <div style="font-size: 2rem;">⭐</div>
+                            <h4>FontAwesome</h4>
+                            <p>Ícones divertidos</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Curiosidade -->
+                <div class="section slide" id="slide-6">
+                    <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+                    <div class="fun-fact">
+                        <p style="font-size: 1.2rem; margin-bottom: 15px;">🌟 Você sabia que muitos programadores começaram criando páginas pessoais?</p>
+                        <p>Eles usavam essas páginas para se apresentar na internet e mostrar seus projetos!</p>
+                        <button class="interactive-button" onclick="showProgrammerStory()">📖 Ouvir História</button>
+                        <div id="programmerStory" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Próxima Aula -->
+                <div class="section slide" id="slide-7">
+                    <h2><span class="emoji">🎯</span> Para a próxima aula...</h2>
+                    <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Pense: Como deixar sua página ainda mais bonita? Que tal aprender a mudar as cores e o estilo dela?</p>
+                    <div style="text-align: center;">
+                        <button class="interactive-button" onclick="window.location.href='aula4.html'">🚀 Ir para Aula 4</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" onclick="window.location.href='index.html'">🏠 Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

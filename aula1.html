@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 Aula 1: O que é a Internet?</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>🌐 Aula 1: O que é a Internet?</h1>
+                <p>Olá, Pequeno Programador! Seja bem-vindo à sua primeira aventura! <span class="emoji">👋</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="O que é Internet?" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="O que é um Site?" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="3 Partes Mágicas" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Atividade Lúdica" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Curiosidade" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2 style="text-align: center; margin-bottom: 30px;"><span class="emoji">👋</span> Olá, Pequeno Programador!</h2>
+                    <div style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                        <p>Seja bem-vindo à sua primeira aventura no mundo da programação web! Hoje vamos descobrir juntos como a internet funciona e o que existe por trás dos sites que você adora visitar.</p>
+                        <div style="font-size: 3rem; margin: 30px 0;">🌐✨🚀</div>
+                        <p>Use os pontinhos do lado direito para navegar!</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️ Anterior</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é a Internet -->
+                <div class="section slide" id="slide-1">
+                    <h2><span class="emoji">🌍</span> O que é a Internet?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">A internet é como uma grande rede de estradas que liga computadores do mundo todo!</p>
+                    <ul>
+                        <li>Ela permite que você converse, jogue e aprenda com pessoas de qualquer lugar.</li>
+                        <li><strong>Termo:</strong> "Internet" é o nome dessa rede gigante de computadores.</li>
+                    </ul>
+
+                    <div class="internet-demo" id="internetDemo">
+                        <div class="computer" onclick="connectComputer(this)">
+                            <div>💻</div>
+                            <div>Seu PC</div>
+                            <div class="connection-line"></div>
+                        </div>
+                        <div class="computer" onclick="connectComputer(this)">
+                            <div>🖥️</div>
+                            <div>Servidor</div>
+                            <div class="connection-line"></div>
+                        </div>
+                        <div class="computer" onclick="connectComputer(this)">
+                            <div>📱</div>
+                            <div>Celular</div>
+                            <div class="connection-line"></div>
+                        </div>
+                        <div class="computer" onclick="connectComputer(this)">
+                            <div>💻</div>
+                            <div>Outro PC</div>
+                            <div class="connection-line"></div>
+                        </div>
+                    </div>
+
+                    <button class="interactive-button" onclick="connectAllComputers()">🔗 Conectar Todos!</button>
+
+                    <div class="challenge-box">
+                        <h3>🎨 Desafio 1:</h3>
+                        <p>Desenhe como você imagina a internet. Pode ser uma teia, uma estrada, ou até um mar de computadores!</p>
+                        <div class="drawing-area" onclick="drawInternet()" id="drawingArea1">
+                            <p>✏️ Clique aqui para "desenhar" a internet!</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: O que é um Site -->
+                <div class="section slide" id="slide-2">
+                    <h2><span class="emoji">🏠</span> O que é um site?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Um site é como uma casa na internet, onde você pode encontrar informações, jogos, vídeos e muito mais!</p>
+                    <ul>
+                        <li>Cada site tem um endereço (como www.google.com) para você encontrar ele.</li>
+                        <li><strong>Termo:</strong> "Site" é uma página especial que mora na internet.</li>
+                    </ul>
+
+                    <div class="site-list">
+                        <div class="site-item" onclick="visitSite('Google')">
+                            <div style="font-size: 2rem;">🔍</div>
+                            <h4>Google</h4>
+                            <p>Para pesquisar</p>
+                        </div>
+                        <div class="site-item" onclick="visitSite('YouTube')">
+                            <div style="font-size: 2rem;">📺</div>
+                            <h4>YouTube</h4>
+                            <p>Para assistir vídeos</p>
+                        </div>
+                        <div class="site-item" onclick="visitSite('Jogos')">
+                            <div style="font-size: 2rem;">🎮</div>
+                            <h4>Sites de Jogos</h4>
+                            <p>Para se divertir</p>
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>📝 Desafio 2:</h3>
+                        <p>Liste 3 sites que você mais gosta de visitar e escreva para que eles servem!</p>
+                        <div id="siteResults"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: As 3 Partes Mágicas -->
+                <div class="section slide" id="slide-3">
+                    <h2><span class="emoji">🧙‍♂️</span> As 3 Partes Mágicas de um Site</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Todo site é feito de três partes mágicas. Clique em cada uma para ver o que acontece!</p>
+
+                    <div class="site-builder">
+                        <div class="code-block html-block" onclick="addHTML()">
+                            <h3>📄 HTML</h3>
+                            <p>O corpo do site</p>
+                            <small>(textos, imagens, botões)</small>
+                        </div>
+                        <div class="code-block css-block" onclick="addCSS()">
+                            <h3>🎨 CSS</h3>
+                            <p>As roupas do site</p>
+                            <small>(cores e beleza)</small>
+                        </div>
+                        <div class="code-block js-block" onclick="addJS()">
+                            <h3>⚡ JavaScript</h3>
+                            <p>O cérebro do site</p>
+                            <small>(movimento e interação)</small>
+                        </div>
+                    </div>
+
+                    <div class="website-preview" id="websitePreview">
+                        <p>👆 Clique nas partes mágicas acima para construir um site!</p>
+                    </div>
+
+                    <button class="interactive-button" onclick="resetWebsite()">🔄 Começar de Novo</button>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Atividade Lúdica -->
+                <div class="section slide" id="slide-4">
+                    <h2><span class="emoji">🎨</span> Atividade Lúdica: Montando um site no papel</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Pegue papel, lápis de cor e desenhe como seria o seu próprio site! Pense em:</p>
+                    <ul>
+                        <li>Um nome para o site</li>
+                        <li>Um botão legal</li>
+                        <li>Uma imagem divertida</li>
+                        <li>Uma cor de fundo</li>
+                    </ul>
+                    <p>Depois, mostre para sua família ou amigos!</p>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Ferramentas Online -->
+                <div class="section slide" id="slide-5">
+                    <h2><span class="emoji">🛠️</span> Ferramentas Online para Explorar</h2>
+                    <ul>
+                        <li><strong>CodePen</strong> - Para brincar de programar sem instalar nada!</li>
+                        <li><strong>FontAwesome</strong> - Para colocar ícones divertidos nos seus projetos.</li>
+                        <li><strong>Flaticon</strong> - Para baixar imagens e ícones grátis.</li>
+                    </ul>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Curiosidade -->
+                <div class="section slide" id="slide-6">
+                    <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+                    <div class="fun-fact">
+                        <p style="font-size: 1.2rem; margin-bottom: 15px;">🌟 Você sabia que o primeiro site do mundo ainda existe?</p>
+                        <p>Foi criado em 1991 e você pode visitá-lo até hoje!</p>
+                        <button class="interactive-button" onclick="showFirstWebsite()">🔍 Ver o Primeiro Site</button>
+                        <div id="firstWebsiteInfo" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Próxima Aula -->
+                <div class="section slide" id="slide-7">
+                    <h2><span class="emoji">🎯</span> Para a próxima aula...</h2>
+                    <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Prepare seu desenho e pense: se você pudesse criar qualquer site, como ele seria?</p>
+                    <div style="text-align: center;">
+                        <button class="interactive-button" onclick="window.location.href='aula2.html'">🚀 Ir para Aula 2</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" onclick="window.location.href='index.html'">🏠 Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 Aula 5: Layout e Posicionamento</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h2>📦 Aula 5: Layout e Posicionamento – Brincando com Caixas!</h2>
+                <p>Olá, Pequeno Programador! Hoje vamos aprender como organizar melhor as informações! <span class="emoji">👋</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="O que é div?" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Criando Caixas" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="CSS para Caixas" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Atividade Lúdica" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Curiosidade" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2 style="text-align: center; margin-bottom: 30px;"><span class="emoji">📦</span> Olá, Pequeno Programador!</h2>
+                    <div style="text-align: center; font-size: 1.2rem; margin-bottom: 30px;">
+                        <p>Hoje vamos aprender como organizar melhor as informações na sua página usando caixas mágicas chamadas <strong>divs</strong>!</p>
+                        <div style="font-size: 3rem; margin: 30px 0;">📦🎨🏗️</div>
+                        <p>Use os pontinhos do lado direito para navegar!</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️ Anterior</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é uma caixa -->
+                <div class="section slide" id="slide-1">
+                    <h2><span class="emoji">📦</span> O que é uma "caixa" (div)?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Imagine que cada parte da sua página pode ficar dentro de uma caixa.</p>
+                    <ul>
+                        <li>Essas caixas ajudam a separar, organizar e decorar cada pedacinho do site.</li>
+                        <li><strong>Termo:</strong> <code>&lt;div&gt;</code> é uma tag do HTML que cria uma caixa invisível para agrupar outros elementos.</li>
+                    </ul>
+
+                    <div class="box-demo">
+                        <div class="demo-box">
+                            <h3>Caixa de Título</h3>
+                        </div>
+                        <div class="demo-box">
+                            <p>Caixa de texto</p>
+                        </div>
+                        <div class="demo-box">
+                            <img src="https://placedog.net/100/100" alt="Cachorro" style="width: 100px;">
+                        </div>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>🔍 Desafio 1:</h3>
+                        <p>Olhe para um site que você gosta. Consegue imaginar onde estariam as caixas?</p>
+                        <button class="interactive-button" onclick="showBoxExample()">📦 Ver Exemplo</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Criando caixas -->
+                <div class="section slide" id="slide-2">
+                    <h2><span class="emoji">🏗️</span> Como criar uma caixa no HTML</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Para criar uma caixa, basta usar a tag <code>&lt;div&gt;</code>:</p>
+
+                    <div class="code-block">
+                        <pre><code>&lt;div&gt;
+  &lt;h2&gt;Minha Caixa&lt;/h2&gt;
+  &lt;p&gt;Esse texto está dentro de uma caixa!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div class="box-builder">
+                        <button class="interactive-button" onclick="addBox()">➕ Adicionar Caixa</button>
+                        <div id="boxContainer" class="box-container"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: CSS para caixas -->
+                <div class="section slide" id="slide-3">
+                    <h2><span class="emoji">🎨</span> CSS para Caixas</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Com CSS você pode decorar suas caixas!</p>
+
+                    <div class="css-properties-grid">
+                        <div class="css-prop">
+                            <code>width</code>
+                            <p>Largura da caixa</p>
+                        </div>
+                        <div class="css-prop">
+                            <code>height</code>
+                            <p>Altura da caixa</p>
+                        </div>
+                        <div class="css-prop">
+                            <code>background-color</code>
+                            <p>Cor do fundo</p>
+                        </div>
+                        <div class="css-prop">
+                            <code>border</code>
+                            <p>Borda da caixa</p>
+                        </div>
+                        <div class="css-prop">
+                            <code>margin</code>
+                            <p>Espaço externo</p>
+                        </div>
+                        <div class="css-prop">
+                            <code>padding</code>
+                            <p>Espaço interno</p>
+                        </div>
+                    </div>
+
+                    <button class="interactive-button" onclick="decorateBoxes()">🎨 Decorar Caixas</button>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Atividade Lúdica -->
+                <div class="section slide" id="slide-4">
+                    <h2><span class="emoji">🎮</span> Atividade Lúdica: Construindo um Layout</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Vamos construir um layout completo usando caixas!</p>
+
+                    <div class="layout-builder">
+                        <div class="layout-section" onclick="selectSection('header')">
+                            <h4>📋 Cabeçalho</h4>
+                            <p>Para o título do site</p>
+                        </div>
+                        <div class="layout-section" onclick="selectSection('content')">
+                            <h4>📄 Conteúdo</h4>
+                            <p>Para o texto principal</p>
+                        </div>
+                        <div class="layout-section" onclick="selectSection('sidebar')">
+                            <h4>📱 Barra Lateral</h4>
+                            <p>Para links e menus</p>
+                        </div>
+                        <div class="layout-section" onclick="selectSection('footer')">
+                            <h4>🏷️ Rodapé</h4>
+                            <p>Para informações finais</p>
+                        </div>
+                    </div>
+
+                    <button class="interactive-button" onclick="buildLayout()">🏗️ Construir Layout</button>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Ferramentas -->
+                <div class="section slide" id="slide-5">
+                    <h2><span class="emoji">🛠️</span> Ferramentas Online para Explorar</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item" onclick="openTool('codepen')">
+                            <div style="font-size: 2rem;">📝</div>
+                            <h4>CodePen</h4>
+                            <p>Para testar layouts</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('cssgridgarden')">
+                            <div style="font-size: 2rem;">🌱</div>
+                            <h4>CSS Grid Garden</h4>
+                            <p>Jogo para aprender CSS Grid</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('flexboxfroggy')">
+                            <div style="font-size: 2rem;">🐸</div>
+                            <h4>Flexbox Froggy</h4>
+                            <p>Jogo para aprender Flexbox</p>
+                        </div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Curiosidade -->
+                <div class="section slide" id="slide-6">
+                    <h2><span class="emoji">🤔</span> Curiosidade Incrível!</h2>
+                    <div class="fun-fact">
+                        <p style="font-size: 1.2rem; margin-bottom: 15px;">🌟 Você sabia que todos os sites são feitos de caixas dentro de caixas?</p>
+                        <p>Até os sites mais complicados, como jogos e redes sociais, são construídos usando essas caixinhas mágicas!</p>
+                        <button class="interactive-button" onclick="showBoxStructure()">📦 Ver Estrutura</button>
+                        <div id="boxStructure" style="margin-top: 15px;"></div>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Próxima Aula -->
+                <div class="section slide" id="slide-7">
+                    <h2><span class="emoji">🎯</span> Para a próxima aula...</h2>
+                    <p style="font-size: 1.2rem; text-align: center; margin-bottom: 20px;">Que tal aprender a fazer sua página interagir com o usuário? Vamos descobrir os botões e formulários!</p>
+                    <div style="text-align: center;">
+                        <button class="interactive-button" onclick="window.location.href='aula6.html'">🚀 Ir para Aula 6</button>
+                    </div>
+
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" onclick="window.location.href='index.html'">🏠 Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
