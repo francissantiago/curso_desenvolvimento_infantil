@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🃏 Aula 6: Classes, IDs e Cartões</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="script.js?v=1.0" defer></script>
+    <style>
+        .html-code {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Área da Aula -->
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>🃏 Aula 6: Classes, IDs e Cartões</h1>
+                <p>Hoje vamos aprender quando usar <strong>classes</strong> e <strong>IDs</strong> no CSS e, em seguida, estilizar um cartão incrível! <span class="emoji">✨</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <!-- Controles de Navegação -->
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="Classes vs IDs" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Exemplo Prático" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="CSS Direcionado" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="HTML do Card" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="CSS do Card" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Galeria" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Ferramentas" onclick="goToSlide(7)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(8)"></div>
+            </div>
+
+            <!-- Container dos Slides -->
+            <div class="slides-container">
+                <!-- Slide 0: Introdução -->
+                <div class="section slide active" id="slide-0">
+                    <h2><span class="emoji">👋</span> Bem-vindo!</h2>
+                    <p style="font-size:1.1rem; margin-bottom:20px;">Hoje você vai aprender a montar e estilizar um cartão com imagem, nome e descrição.</p>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 1: O que é um card -->
+                <div class="section slide" id="slide-1">
+                    <h2>Classes x IDs</h2>
+                    <ul>
+                        <li><strong>Classe (.botao-verde)</strong>: pode ser usada em vários elementos.</li>
+                        <li><strong>ID (#cabecalho)</strong>: só deve aparecer uma vez na página.</li>
+                        <li>Use classes para estilos repetidos e IDs para itens únicos.</li>
+                    </ul>
+                    <div class="challenge-box">
+                        <h3>🤔 Pergunta</h3>
+                        <p>Qual parte do seu site precisa de um ID único? E qual parte pode compartilhar o mesmo estilo?</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: HTML do Card -->
+                <div class="section slide" id="slide-2">
+                    <h2>Exemplo: marcando com classe e ID</h2>
+                    <p>Observe como usamos a classe <code>.card</code> em vários elementos e o ID <code>#heroi-do-dia</code> em apenas um.</p>
+                    <div class="class-demo" style="background:#f7fafc;border:2px dashed #cbd5e0;padding:15px;border-radius:12px;">
+                        <div class="selector-class" style="padding:10px;margin-bottom:8px;border-radius:8px;background:#edf2f7;">&lt;div class="card destaque"&gt;</div>
+                            <div id="selector-id" style="margin-left: 30px;padding:10px;margin-bottom:8px;border-radius:8px;background:#fff5f5;">&lt;div id="heroi-do-dia"&gt; ... &lt;/div&gt;</div>
+                        <div class="selector-class" style="padding:10px;border-radius:8px;background:#edf2f7;">&lt;/div&gt;</div>
+                    </div>
+                    <div style="margin-top:15px;display:flex;gap:10px;flex-wrap:wrap;">
+                        <button class="interactive-button" onclick="highlightSelectors('class')">🔁 Mostrar Classes</button>
+                        <button class="interactive-button" onclick="highlightSelectors('id')">🏷️ Mostrar IDs</button>
+                        <button class="interactive-button" onclick="highlightSelectors('reset')">♻️ Resetar</button>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: CSS do Card -->
+                                <div class="section slide" id="slide-3">
+                                        <h2>CSS Direcionado</h2>
+                                        <div class="code-block css-block">
+<pre>.card {
+    border-radius: 12px;
+    padding: 16px;
+}
+.destaque {
+    border: 2px dashed #f6ad55;
+}
+#heroi-do-dia {
+    background: #fff4e6;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}</pre>
+                                        </div>
+                                        <div class="challenge-box">
+                                                <h3>🧠 Desafio</h3>
+                                                <p>Crie uma classe nova para o botão do seu site e um ID para o cabeçalho principal.</p>
+                                        </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Atividade Lúdica -->
+                <div class="section slide" id="slide-4">
+                    <h2>Montando o cartão no HTML</h2>
+                    <p>Nosso cartão terá uma classe geral e um ID exclusivo.</p>
+                    <div class="code-block html-block">
+<pre class="html-code">&lt;div class="card personagem" id="heroi-do-dia"&gt;
+    &lt;img class="card-foto" src="URL" alt="Personagem"&gt;
+    &lt;h2 class="card-nome"&gt;Nome&lt;/h2&gt;
+    &lt;p class="card-descricao"&gt;Frase marcante&lt;/p&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    <div class="challenge-box">
+                        <h3>✍️ Exercício</h3>
+                        <p>Clique para gerar o cartão exemplo e depois troque o texto com suas ideias.</p>
+                        <button class="interactive-button" onclick="buildCard()">➕ Gerar Card</button>
+                        <div id="cardExample" style="margin-top:12px;"></div>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 9</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 5: CSS Card -->
+                <div class="section slide" id="slide-5">
+                    <h2>Estilizando o cartão com CSS</h2>
+                    <div class="code-block css-block">
+<pre>.card {
+  width: 240px;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  background: #f0f4ff;
+}
+.card-foto { border-radius: 12px; }
+#heroi-do-dia {
+  border: 3px solid #7f9cf5;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}</pre>
+                    </div>
+                    <div class="challenge-box">
+                        <h3>🎨 Personalize</h3>
+                        <p>Mude cores, bordas e sombras clicando no botão.</p>
+                        <button class="interactive-button" onclick="changeCardStyle()">🎨 Aplicar Nova Estética</button>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 9</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 6: Galeria -->
+                <div class="section slide" id="slide-6">
+                    <h2>Galeria de Personagens</h2>
+                    <p>Crie vários cartões para montar uma coleção.</p>
+                    <div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap;">
+                        <button class="interactive-button" onclick="addGalleryCard()">➕ Adicionar Personagem</button>
+                        <button class="interactive-button" onclick="clearGallery()" style="background:#f56565;color:white;">🧹 Limpar Galeria</button>
+                    </div>
+                    <div id="cardGallery" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 9</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Ferramentas -->
+                <div class="section slide" id="slide-7">
+                    <h2>Ferramentas Online</h2>
+                    <div class="tools-grid">
+                        <div class="tool-item" onclick="openTool('codepen')">
+                            <img src="https://codepen.io/favicon.ico" alt="CodePen">
+                            <h4>CodePen</h4>
+                            <p>Teste classes e IDs em tempo real.</p>
+                        </div>
+                        <div class="tool-item" onclick="openTool('unsplash')">
+                            <img src="https://unsplash.com/favicon.ico" alt="Unsplash">
+                            <h4>Unsplash</h4>
+                            <p>Encontre imagens para o cartão.</p>
+                        </div>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 9</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Próxima aula -->
+                <div class="section slide" id="slide-8">
+                    <h2>Para a próxima aula...</h2>
+                    <p>Vamos juntar tudo que aprendemos para montar um projeto completo e apresentar para a família!</p>
+                    <div style="text-align:center;margin-top:12px;">
+                        <button class="interactive-button" onclick="window.location.href='aula7.html'">🚀 Preparar Projeto (Aula 7)</button>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">9 / 9</div>
+                        <button class="nav-button" disabled>Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funções simples específicas para esta aula
+        function highlightSelectors(target) {
+            const classItems = document.querySelectorAll('.selector-class');
+            const idItem = document.getElementById('selector-id');
+            classItems.forEach((item) => {
+                item.style.outline = target === 'class' ? '3px solid #48bb78' : 'none';
+                item.style.background = target === 'class' ? '#c6f6d5' : '#edf2f7';
+            });
+            if (idItem) {
+                if (target === 'id') {
+                    idItem.style.outline = '3px solid #f56565';
+                    idItem.style.background = '#fed7d7';
+                } else {
+                    idItem.style.outline = 'none';
+                    idItem.style.background = '#fff5f5';
+                }
+            }
+        }
+
+        function buildCard() {
+            const container = document.getElementById('cardExample');
+            if (!container) return;
+            container.innerHTML = `
+                <div class="card personagem" id="heroi-do-dia" style="display:inline-block;">
+                    <img class="card-foto" src="https://placedog.net/150/150" alt="Personagem" width="120">
+                    <h2 class="card-nome">Rex, o Aventureiro</h2>
+                    <p class="card-descricao">Corajoso e curioso — sempre pronto para explorar!</p>
+                </div>
+            `;
+        }
+
+        function changeCardStyle() {
+            const card = document.querySelector('#cardExample .card') || document.querySelector('#cardGallery .card');
+            if (!card) return alert('Adicione primeiro um card para mudar o estilo!');
+            card.style.background = '#fff7ed';
+            card.style.border = '3px solid #f6ad55';
+            card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
+            card.style.transform = 'translateY(-2px)';
+            setTimeout(() => {
+                card.style.transform = 'translateY(0)';
+            }, 400);
+        }
+
+        let galleryCount = 0;
+        function addGalleryCard() {
+            const gallery = document.getElementById('cardGallery');
+            if (!gallery) return;
+            galleryCount++;
+            const div = document.createElement('div');
+            div.className = 'card personagem';
+            div.style.width = '180px';
+            div.style.padding = '12px';
+            div.style.borderRadius = '10px';
+            div.style.background = '#f8fafc';
+            div.style.border = '2px solid #e2e8f0';
+            div.innerHTML = `
+                <img class="card-foto" src="https://placedog.net/120/120?random=${galleryCount}" alt="Personagem" width="100" style="border-radius:8px;">
+                <h3 class="card-nome">Personagem ${galleryCount}</h3>
+                <p class="card-descricao">Uma frase divertida sobre o personagem.</p>
+            `;
+            gallery.appendChild(div);
+        }
+
+        function clearGallery() {
+            const gallery = document.getElementById('cardGallery');
+            if (gallery) gallery.innerHTML = '';
+            galleryCount = 0;
+        }
+    </script>
+</body>
+</html>
