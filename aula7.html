@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Aula 7: Projeto Completo para a Família</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <style>
+        .project-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+        .project-checklist li {
+            background: #edf2f7;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .project-checklist li.checked {
+            background: #c6f6d5;
+            text-decoration: line-through;
+            color: #2f855a;
+        }
+        .plan-input {
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #cbd5f5;
+            width: 220px;
+            margin-right: 8px;
+        }
+        .plan-list {
+            list-style: disc;
+            padding-left: 22px;
+            margin: 10px 0;
+        }
+        .html-code {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            font-size: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+    </style>
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>🚀 Aula 7: Projeto Completo</h1>
+                <p>Hora de juntar tudo que aprendemos (HTML + CSS + Layout) e criar um site para mostrar à família e aos amigos! <span class="emoji">🎉</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="Checklist" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Planejamento" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="HTML Base" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Visual" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="História" onclick="goToSlide(5)"></div>
+                <div class="nav-dot" data-title="Apresentação" onclick="goToSlide(6)"></div>
+                <div class="nav-dot" data-title="Próxima Aula" onclick="goToSlide(7)"></div>
+            </div>
+
+            <div class="slides-container">
+                <div class="section slide active" id="slide-0">
+                    <h2><span class="emoji">🌟</span> Missão da Aula</h2>
+                    <p>Vamos criar uma página especial com cartões para contar sobre você e seus amigos, usando tudo que aprendemos: HTML, CSS, classes e IDs!</p>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️</button>
+                        <div class="slide-counter">1 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-1">
+                    <h2>Checklist do Projeto</h2>
+                    <ul id="projectChecklist" class="project-checklist">
+                        <li onclick="toggleChecklistItem(this)">✅ Página com título e cabeçalho</li>
+                        <li onclick="toggleChecklistItem(this)">✅ Seção com seu nome e foto</li>
+                        <li onclick="toggleChecklistItem(this)">✅ Pelo menos 3 cartões de amigos ou hobbies</li>
+                        <li onclick="toggleChecklistItem(this)">✅ Usar classes para estilos e ID para o cabeçalho</li>
+                        <li onclick="toggleChecklistItem(this)">✅ Mensagem final para a família</li>
+                    </ul>
+                    <button class="interactive-button" onclick="resetChecklist()">🔁 Resetar Checklist</button>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-2">
+                    <h2>Planejamento Simples</h2>
+                    <p>Veja um exemplo de página: cabeçalho, cartões e mensagem. Adicione suas ideias!</p>
+                    <div class="plan-builder">
+                        <input type="text" id="planInput" placeholder="Ex.: Cartão do meu cachorro" class="plan-input">
+                        <button class="interactive-button" onclick="addPlanItem()">➕ Adicionar Ideia</button>
+                    </div>
+                    <ul id="planList" class="plan-list">
+                        <li>Cabeçalho com meu nome</li>
+                        <li>3 cartões de amigos</li>
+                        <li>Mensagem para família</li>
+                    </ul>
+                    <button class="interactive-button" onclick="generateProjectPlan()">📝 Ver Plano Completo</button>
+                    <div id="planResult" class="challenge-box" style="margin-top:15px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-3">
+                    <h2>Estrutura HTML Simples</h2>
+                    <div class="code-block html-block">
+<pre class="html-code">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Meu Mundo Especial&lt;/title&gt;
+        
+        &lt;!-- Importação de fontes Google --&gt;
+        &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+        &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+        &lt;link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&family=Permanent+Marker&display=swap" rel="stylesheet"&gt;
+        
+        &lt;!-- Importação de ícones FontAwesome --&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="cabecalho"&gt;
+            &lt;h1&gt;&lt;i class="fa-solid fa-earth-americas"&gt;&lt;/i&gt;Meu Mundo Especial&lt;/h1&gt;
+        &lt;/div&gt;
+
+        &lt;div class="cartoes"&gt;
+            &lt;div class="card"&gt;...&lt;/div&gt;
+            &lt;div class="card"&gt;...&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="mensagem"&gt;
+            &lt;p&gt;Obrigado por visitar!&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                    <p>Lembre: use <code>class="card"</code> para estilos iguais e <code>id="cabecalho"</code> para algo único.</p>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-4">
+                    <h2>Estilos Simples</h2>
+                    <div class="code-block css-block">
+<pre>body {
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+}
+#cabecalho {
+  text-align: center;
+  color: blue;
+}
+.card {
+  border: 2px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}</pre>
+                    </div>
+                    <button class="interactive-button" onclick="applyTheme()">🎨 Ver Exemplo de Estilo</button>
+                    <div id="themePreview" class="challenge-box" style="margin-top:15px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-5">
+                    <h2>Conte sua História</h2>
+                    <p>Prepare o que vai falar na apresentação.</p>
+                    <div class="challenge-box">
+                        <h3>🗣️ Roteiro Simples</h3>
+                        <ol id="storyList">
+                            <li>Oi, eu sou [seu nome]!</li>
+                            <li>Veja meus cartões legais.</li>
+                            <li>Aprendi HTML e CSS no curso.</li>
+                        </ol>
+                        <button class="interactive-button" onclick="addStoryStep()">➕ Adicionar Frase</button>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-6">
+                    <h2>Preparando a Apresentação</h2>
+                    <ul>
+                        <li>Mostre a página no computador ou tablet.</li>
+                        <li>Clique nos cartões para mostrar.</li>
+                        <li>Diga o roteiro que preparou.</li>
+                    </ul>
+                    <button class="interactive-button" onclick="generateInvite()">📨 Criar Mensagem para Família</button>
+                    <div id="invitePreview" class="challenge-box" style="margin-top:15px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">7 / 8</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-7">
+                    <h2>Próxima parada: Aula 8</h2>
+                    <p>Na próxima aula vamos apresentar oficialmente o projeto, ouvir feedback e comemorar o fim do curso!</p>
+                    <div style="text-align:center;margin-top:12px;">
+                        <button class="interactive-button" onclick="window.location.href='aula8.html'">🎤 Preparar Apresentação</button>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">8 / 8</div>
+                        <button class="nav-button" disabled>Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleChecklistItem(item) {
+            item.classList.toggle('checked');
+        }
+        function resetChecklist() {
+            document.querySelectorAll('#projectChecklist li').forEach((li) => li.classList.remove('checked'));
+        }
+
+        function addPlanItem() {
+            const input = document.getElementById('planInput');
+            if (!input.value.trim()) return;
+            const li = document.createElement('li');
+            li.textContent = input.value.trim();
+            document.getElementById('planList').appendChild(li);
+            input.value = '';
+        }
+        function generateProjectPlan() {
+            const list = Array.from(document.querySelectorAll('#planList li')).map((li, index) => `${index + 1}. ${li.textContent}`);
+            const result = document.getElementById('planResult');
+            if (!list.length) {
+                result.innerHTML = '<p>Adicione pelo menos um bloco para gerar o plano!</p>';
+                return;
+            }
+            result.innerHTML = `<strong>Plano do Site:</strong><br>${list.join('<br>')}`;
+        }
+
+        function applyTheme() {
+            const preview = document.getElementById('themePreview');
+            preview.innerHTML = `
+                <div style="padding:15px;border-radius:12px;border:2px solid #ddd;background:white;text-align:center;">
+                    <h3 style="color:blue;">Meu Mundo Especial</h3>
+                    <div style="border:2px solid #ddd;padding:10px;margin:10px;background:#f0f8ff;">Cartão Exemplo</div>
+                </div>
+            `;
+        }
+
+        function addStoryStep() {
+            const list = document.getElementById('storyList');
+            const li = document.createElement('li');
+            li.textContent = 'Obrigado por assistir!';
+            list.appendChild(li);
+        }
+
+        function generateInvite() {
+            const preview = document.getElementById('invitePreview');
+            preview.innerHTML = `
+                <p><strong>Mensagem:</strong> Família, venham ver minha página com cartões legais que eu fiz!</p>
+            `;
+        }
+    </script>
+</body>
+</html>
