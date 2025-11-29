@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎤 Aula 8: Apresentação Final e Encerramento</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <style>
+        .celebration-box {
+            background: linear-gradient(135deg, #fdf2f8, #e9d8fd);
+            border-radius: 16px;
+            padding: 18px;
+            border: 3px solid #fbb6ce;
+            text-align: center;
+        }
+        .feedback-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+        .feedback-list li {
+            background: #f0fff4;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 6px;
+            border: 1px solid #9ae6b4;
+        }
+    </style>
+    <script src="script.js?v=1.0" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-view" id="lessonView">
+            <div class="header">
+                <h1>🎤 Aula 8: Apresente e Comemore!</h1>
+                <p>É hora de mostrar seu projeto para a família, colher feedbacks e celebrar o fim do curso. <span class="emoji">🏆</span></p>
+                <button class="back-btn" onclick="window.location.href='index.html'">← Voltar ao Menu</button>
+            </div>
+
+            <div class="navigation-controls">
+                <div class="nav-dot active" data-title="Introdução" onclick="goToSlide(0)"></div>
+                <div class="nav-dot" data-title="Preparação" onclick="goToSlide(1)"></div>
+                <div class="nav-dot" data-title="Apresentação" onclick="goToSlide(2)"></div>
+                <div class="nav-dot" data-title="Feedback" onclick="goToSlide(3)"></div>
+                <div class="nav-dot" data-title="Certificado" onclick="goToSlide(4)"></div>
+                <div class="nav-dot" data-title="Gratidão" onclick="goToSlide(5)"></div>
+            </div>
+
+            <div class="slides-container">
+                <div class="section slide active" id="slide-0">
+                    <h2>Momento Especial</h2>
+                    <p>Convide família e amigos, abra seu site e prepare-se para uma apresentação cheia de orgulho.</p>
+                    <div class="celebration-box">
+                        <h3>🎉 Você chegou longe!</h3>
+                        <p>Use esta aula como roteiro para conduzir o grande momento.</p>
+                    </div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" disabled>⬅️</button>
+                        <div class="slide-counter">1 / 6</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-1">
+                    <h2>Preparação Final</h2>
+                    <ul>
+                        <li>Teste os links e cartões do seu site.</li>
+                        <li>Separe 3 pontos favoritos para destacar.</li>
+                        <li>Escolha um fundo musical suave (opcional).</li>
+                    </ul>
+                    <button class="interactive-button" onclick="startPresentationMode()">🖥️ Ativar modo apresentação</button>
+                    <div id="presentationMode" class="challenge-box" style="margin-top:12px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">2 / 6</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-2">
+                    <h2>Roteiro de Apresentação</h2>
+                    <ol id="presentationSteps">
+                        <li>Dê boas-vindas e explique o objetivo do site.</li>
+                        <li>Mostre as seções principais (sobre, cartões, contato).</li>
+                        <li>Conte o que mais gostou de aprender.</li>
+                    </ol>
+                    <button class="interactive-button" onclick="addPresentationStep()">➕ Adicionar passo personalizado</button>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">3 / 6</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-3">
+                    <h2>Registro de Feedback</h2>
+                    <p>Anote os elogios e ideias que receber.</p>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                        <input type="text" id="feedbackInput" placeholder="Comentário da família" style="flex:1;min-width:220px;padding:10px;border-radius:8px;border:2px solid #cbd5f5;">
+                        <button class="interactive-button" onclick="addFeedback()">📝 Registrar</button>
+                    </div>
+                    <ul id="feedbackList" class="feedback-list"></ul>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">4 / 6</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-4">
+                    <h2>Certificado de Orgulho</h2>
+                    <p>Gere uma mensagem especial de conclusão.</p>
+                    <button class="interactive-button" onclick="generateCertificateMessage()">🏅 Gerar Certificado</button>
+                    <div id="certificateBox" class="challenge-box" style="margin-top:12px;"></div>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">5 / 6</div>
+                        <button class="nav-button" onclick="nextSlide()">Próximo ➡️</button>
+                    </div>
+                </div>
+
+                <div class="section slide" id="slide-5">
+                    <h2>Gratidão e Encerramento</h2>
+                    <p>Agradeça a quem acompanhou você durante as aulas e convide-os a deixar um recadinho no site.</p>
+                    <button class="interactive-button" onclick="celebrateCompletion()">🎊 Tocar fogos virtuais</button>
+                    <p style="margin-top:15px;">Continue explorando, criando e compartilhando sua criatividade!</p>
+                    <div class="slide-navigation">
+                        <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+                        <div class="slide-counter">6 / 6</div>
+                        <button class="nav-button" disabled>Próximo ➡️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function startPresentationMode() {
+            const box = document.getElementById('presentationMode');
+            box.innerHTML = '<p><strong>Modo apresentação ativo!</strong><br>Abra seu site em tela cheia e desligue notificações para focar no momento.</p>';
+        }
+        function addPresentationStep() {
+            const list = document.getElementById('presentationSteps');
+            const li = document.createElement('li');
+            li.textContent = 'Convide alguém para interagir com o site (clicar em um cartão ou link).';
+            list.appendChild(li);
+        }
+        function addFeedback() {
+            const input = document.getElementById('feedbackInput');
+            if (!input.value.trim()) return;
+            const li = document.createElement('li');
+            li.textContent = input.value.trim();
+            document.getElementById('feedbackList').appendChild(li);
+            input.value = '';
+        }
+        function generateCertificateMessage() {
+            const box = document.getElementById('certificateBox');
+            const date = new Date().toLocaleDateString('pt-BR');
+            box.innerHTML = `<p><strong>Certificado:</strong> ${date} - ${'Parabéns! Você concluiu o curso e apresentou seu site com muito orgulho.'}</p>`;
+        }
+    </script>
+</body>
+</html>
